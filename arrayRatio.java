@@ -1,5 +1,6 @@
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Formatter;
 import java.util.List;
 
@@ -42,14 +43,35 @@ public class arrayRatio {
             fmz.close();
     
     }
+    public static void miniMaxSum(List<Integer> arr) {
+        // Write your code here
+        ArrayList <Long> sumList=new ArrayList<>();
+        for(int i=0;i<arr.size();i++){
+        Long sum=0L;
+        for(int j=0;j<arr.size();j++)
+        {
+            if(i==j)continue;
 
+            else{
+                sum+=arr.get(j);
+            }
+        }
+
+        sumList.add(sum);
+    }
+
+    Collections.sort(sumList);
+   System.out.println(sumList.get(0)+"  "+sumList.get(sumList.size()-1));
+        }
+    
     public static void main(String[] args) {
 ArrayList <Integer> arr=new ArrayList<>();
-arr.add(1);
-arr.add(1);
-arr.add(0);
-arr.add(-1);
-arr.add(-1);
-plusMinus(arr);
+arr.add(396285104);
+arr.add(573261094);
+arr.add(759641832);
+arr.add(819230764 );
+arr.add(364801279);
+// plusMinus(arr);
+miniMaxSum(arr);
     }
 }
